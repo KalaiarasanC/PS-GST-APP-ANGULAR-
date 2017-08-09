@@ -1,0 +1,23 @@
+h1{
+	text-align: center;
+	color:gray;
+	border-bottom: 1px solid gray;
+	
+}
+
+.title{
+	text-align:left;
+}
+
+
+input:disabled,input{
+	text-align: center;
+	background:transparent;
+	box-shadow: none;
+	background-color: transparent;
+	border:none;
+}
+input:focus,input:hover{
+	border:1px solid lightgray;
+	outline:none; 
+}

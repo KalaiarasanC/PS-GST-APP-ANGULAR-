@@ -1,0 +1,23 @@
+ng2-auto-complete, input {
+      display: block; border: 1px solid #ccc; width: 300px;
+  }
+
+  h1{
+	text-align: center;
+	color:gray;
+	
+}
+
+#qnt{
+	width:100%;
+}
+
+#title{
+	float:middle;
+	background-color:;
+	font-style: bold;
+	margin:10px;
+}
+.bill_item{
+	text-align: center;
+}

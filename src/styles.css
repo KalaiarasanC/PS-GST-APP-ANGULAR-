@@ -1,1 +1,59 @@
-/* You can add global styles to this file, and also import other style files */
+@import url('https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/css/bootstrap.min.css'); 
+
+body{
+
+}
+		section{
+			margin-top:20px;
+	
+		}
+		.btn{
+			width:100px;
+		}
+
+		section h1,h6{
+			text-align: center;	
+		}
+		span{
+			line-height:30px; 	
+		}
+		.row{
+				padding: 20px;	
+			}
+		#results .row,#bill_list .row{
+				background-color:rgba(0,0,0,0.03);
+				border-bottom:1px solid white; 	
+		}
+		#results .row button{
+			width:50%;
+		}
+		#results{
+			text-align: center;
+		}
+		#results .row:nth-child(even),#bill_list .row:nth-child(even){
+			background-color: white;
+		}
+		
+	    .navbar-right{
+    		  margin-right:25px;	  
+   	 	}
+
+    	.form-inline .btn{
+    		float: right;
+    	}
+    	a{
+    		margin-right:25px;
+    	}
+		a:hover{
+			text-decoration: none;
+			color:black;
+		}
+
+#bill_list{
+	height:300px;
+	border: 1px solid lightgray;
+	overflow:auto; 
+	}
+	.btn{
+		float: right;
+	}

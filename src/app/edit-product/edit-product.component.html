@@ -1,0 +1,78 @@
+<section class="container-fluid">
+		
+				<h1>Edit Products</h1>
+		
+<br>
+
+<div  class="container-fluid" id="results">
+  <div class="row" id="title">
+    <div class="col-sm-1 col-md-1"><span> No</span></div>
+    <div class="col-sm-3 col-md-3"><span> Product Id</span></div>
+    <div class="col-sm-2 col-md-2"><span> Name</span></div>
+    <div class="col-sm-2 col-md-2"><span> Price</span>  </div>
+    <div class="col-sm-2 col-md-2"><span> Tax(%)</span></div>
+    <div class="col-sm-2 col-md-2"></div>
+  </div>
+  <div  id="content">  
+    <div class="row" *ngFor= " let item of items; let i = index " >
+        <div class="col-sm-1 col-md-1"> 
+            <span>{{i+1}}</span>
+        </div>        
+        <div class="col-sm-3 col-md-3"> 
+            <input type="text" id="code"  [(ngModel)] = " item.code " class="form-control" placeholder="Product_Id" disabled>
+        </div>
+        <div class="col-sm-2 col-md-2">
+            <input type="text" id="name"  [(ngModel)] = " item.name " class="form-control" placeholder="Name" >
+         </div>
+         <div class="col-sm-2 col-md-2">
+             <input type="number" id="price"  [(ngModel)] = " item.price" class="form-control" placeholder="Price" >
+         </div>
+          <div class="col-sm-2 col-md-2">
+            <input type="number" id="tax"  [(ngModel)] = " item.taxPercentage " class="form-control" placeholder="Tax in %" >
+         </div>
+         <div class="col-sm-2 col-md-2">
+             <button class="btn btn-sm btn-primary" id="modeBtn" (click)="updateItems(item.code)"><span class="glyphicon glyphicon-pencil"></span>&nbsp;&nbsp;UPDATE</button> 
+         </div>
+         </div>
+         </div>
+         </div>
+    
+  
+
+
+
+
+
+
+
+
+
+
+
+	<!--<div  class="container-fluid" id="results">
+    <div class="row" *ngFor= " let item of items; let i = index "  >
+        <div class="col-sm-1 col-md-1"> 
+            <span>{{i+1}}</span>
+        </div>        
+        <div class="col-sm-3 col-md-3"> 
+            <span>Product_Id:</span>
+            <span>{{item.code}}</span>
+        </div>
+        <div class="col-sm-3 col-md-2">
+            <span>Name:</span> 
+            <span>{{item.name}}</span>
+         </div>
+         <div class="col-sm-2 col-md-2">
+            <span>price:</span> 
+            <span>{{item.price}}</span>
+         </div>
+          <div class="col-sm-2 col-md-2">
+            <span>GST:</span> 
+            <span>{{item.taxPercentage}}</span>
+         </div>
+         <div class="col-sm-2 col-md-2">
+             <button class="btn btn-sm btn-primary" data-toggle="modal" data-target="#updateProduct" (click)="setModal(item.code)"><span class="glyphicon glyphicon-pencil"></span>&nbsp;&nbsp;EDIT</button> 
+         </div>
+    </div>
+</div>-->
+</section>

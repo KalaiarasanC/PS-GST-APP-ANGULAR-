@@ -1,0 +1,69 @@
+<section  class="container-fluid">
+  <h1>
+    Add Bill
+    <h6> search by product name </h6>
+  </h1>
+  <div class="row">
+    <div class="col-sm-6 col-md-6 col-sm-offset-3 col-md -offset-3">
+      <form class="form-group" (submit)="addToBill($event)">
+          <div class="input-group">
+              <span class="input-group-addon" id="basic-addon1"> <span class="glyphicon glyphicon-search"></span></span>
+             <input type="text"  name="searchTerm" class="form-control" placeholder="Search" aria-describedby="basic-addon1">
+              <span class="input-group-btn"><button type="submit" class="btn btn-success" >Add</button></span>
+          </div>
+      </form>
+    </div>
+  </div>
+
+
+<div  class="container-fluid" id="results">
+  <div class="row" id="title">
+    <div class="col-sm-1 col-md-1"><span> No</span></div>
+    <div class="col-sm-2 col-md-2"><span> Product Id</span></div>
+    <div class="col-sm-2 col-md-2"><span> Name</span></div>
+    <div class="col-sm-1 col-md-1"><span> Price</span></div>
+    <div class="col-sm-1 col-md-1"><span> Tax(%)</span></div>
+    <div class="col-sm-2 col-md-2"><span> Quantity</span></div>
+    <div class="col-sm-1 col-md-1"><span> Total Price</span></div>
+    <div class="col-sm-2 col-md-2"><span> Remove</span></div>
+  </div>
+  
+  </div>
+<div id="bill_list" class="row">
+  <div  class="container" >
+    <div class="row bill_item"  *ngFor= " let item of localItems; let i = index "  >
+         <div class="col-sm-1 col-md-1"> 
+            <span>{{i+1}}</span>
+        </div>        
+        <div class="col-sm-2 col-md-2"> 
+            <span>{{item.code}} </span>
+        </div>
+        <div class="col-sm-2 col-md-2" >
+            <span>{{ item.name}}</span>
+         </div>
+         <div class="col-sm-1 col-md-1">
+             <span> {{ item.price }}</span>
+         </div>
+          <div class="col-sm-1 col-md-1">
+              <span> {{ item.taxPercentage }}</span>
+         </div>
+         <div class="col-sm-2 col-md-2">
+            <input type="number" id="qnt" min='1' size="10" [(ngModel)] = " item.quantity " class="form-control" placeholder="Quantity" >
+         </div>
+         <div class="col-sm-1 col-md-1">
+         <span> {{ ((item.price)*(item.quantity))+((item.price)*(item.quantity)*(item.taxPercentage/100))  }}</span>
+         </div>
+         <div class="col-sm-1 col-md-1">
+             <button class="btn btn-sm btn-success" id="modeBtn" (click)="grandTotalAdd(i)"><span class="glyphicon glyphicon-check"></span>&nbsp;&nbsp;</button> 
+         </div>
+         <div class="col-sm-1 col-md-1">
+             <button class="btn btn-sm btn-danger" id="modeBtn" (click)="removeFromBill(i)"><span class="glyphicon glyphicon-remove"></span>&nbsp;&nbsp;</button> 
+         </div>
+    </div>
+    <div class="row">
+       
+      <h2>Grand Total :<span>{{total}}</span></h2>
+    </div>
+  </div>
+</div> 
+</section>
